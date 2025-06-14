@@ -1,10 +1,11 @@
 package br.ufpe.main;
 
 class OrderService {
-	double calcFinalPrice(double price) {
+	double calcFinalPrice(boolean cash, double price) {
+		double finalPrice = cash ? price : price * 0.9;
 		if (price > 100) {
-			return price + (price * 0.1);
+			finalPrice = price + (price * 0.1);
 		}
-		return price;
+		return finalPrice;
 	}
 }
